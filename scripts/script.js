@@ -87,7 +87,7 @@ document.getElementById("start").onclick = async function () {
       }, 1000) 
     // Join a channnel and retrieve the uid for local user
     const _uid = await client.join(appId, channelId, token, null); 
-    document.getElementById("uid").value = _uid;
+    // document.getElementById("uid").value = _uid;
     uid = _uid;
     await client.publish([localAudioTrack, localVideoTrack]);
 
