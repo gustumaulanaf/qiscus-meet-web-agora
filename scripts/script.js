@@ -48,7 +48,7 @@ document.getElementById("start").onclick = async function () {
     // Defines a client for RTC
     const client = AgoraRTC.createClient({ mode: "rtc", codec: "h264" });
     // Get credentials from the form
-    let appId = document.getElementById("app-id").value;
+    let appId = "1c5fd7bfa94f447ca1df0380be9c1320";
     let channelId = document.getElementById("channel").value;
     token = await getToken(channelId,"0");
     // Create local tracks
