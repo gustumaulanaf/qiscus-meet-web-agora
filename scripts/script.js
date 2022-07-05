@@ -7,7 +7,7 @@ let sid = "";
 let rid="";
 var uid = "";
 function addVideoContainer(uid){
-    document.getElementById("rid").innerText = "SEDANG DITAMBAHKAN"+uid;
+    // document.getElementById("rid").innerText = "SEDANG DITAMBAHKAN"+uid;
     let streamDiv=document.createElement("div"); // Create a new div for every stream
     streamDiv.id=uid;                       // Assigning id to div
     streamDiv.style.transform="rotateY(180deg)"; // Takes care of lateral inversion (mirror image)
@@ -53,7 +53,7 @@ document.getElementById("start").onclick = async function () {
     token = await getToken(channelId,"0");
     // Create local tracks
     const [localAudioTrack, localVideoTrack] = await AgoraRTC.createMicrophoneAndCameraTracks();
-    document.getElementById("token").value = token;
+    // document.getElementById("token").value = token;
     // Initialize the stop button
     initStop(client, localAudioTrack, localVideoTrack);
     
@@ -63,7 +63,7 @@ document.getElementById("start").onclick = async function () {
     // Set up event listeners for remote users publishing or unpublishing tracks
     client.on("user-published", async (user, mediaType) => {
         await client.subscribe(user, mediaType); // subscribe when a user publishes
-        document.getElementById("rid").innerText = "SEDANG DITAMBAHKAN"+user.uid;
+        // document.getElementById("rid").innerText = "SEDANG DITAMBAHKAN"+user.uid;
 
         if (mediaType === "video") {
           addVideoContainer(String(user.uid)) // uses helper method to add a container for the videoTrack
